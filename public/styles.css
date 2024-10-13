@@ -1,0 +1,146 @@
+/* public/styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    text-align: center;
+    color: #c8102e; /* Vermelho Honda */
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filial-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.filial-form select {
+    padding: 12px;
+    border: 2px solid #c8102e; /* Bordas vermelhas */
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 1.1em;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.filial-form select:focus {
+    border-color: #000; /* Preto ao focar */
+    outline: none;
+}
+
+.filial-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c8102e; /* Vermelho Honda */
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.filial-form button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
+    z-index: 0;
+}
+
+.filial-form button:hover {
+    background-color: #000; /* Preto ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filial-form button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    font-size: 1.1em;
+}
+
+table th {
+    background-color: #c8102e; /* Vermelho Honda */
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:hover {
+    background-color: rgba(200, 16, 46, 0.1); /* Vermelho claro ao passar o mouse */
+}
+
+.add-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Verde para adicionar ramal */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Adicionando algumas referências automotivas */
+.container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-image: url('/path/to/car-icon.png'); /* Adicione seu ícone de carro aqui */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1; /* Transparente para não sobrecarregar */
+    z-index: -1; /* Fica atrás do conteúdo */
+}

@@ -1,0 +1,47 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Ramais da Empresa</title>
+</head>
+<body>
+    <h1>Lista de Ramais</h1>
+    
+    <form action="/filial" method="POST">
+        <label for="filial">Selecione a Filial:</label>
+        <select name="filial" id="filial" required>
+            <% filiais.forEach(filial => { %>
+                <option value="<%= filial.filial %>"><%= filial.filial %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Filial</th>
+                <th>Setor</th>
+                <th>Pessoa</th>
+                <th>Ramal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% ramais.forEach(ramal => { %>
+                <tr>
+                    <td><%= ramal.filial %></td>
+                    <td><%= ramal.setor %></td>
+                    <td><%= ramal.pessoa %></td>
+                    <td><%= ramal.ramal %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <!-- Apenas o administrador pode ver o botão para adicionar ramais 
+    <a href="/form">Adicionar Novo Ramal</a> -->
+</body>
+</html>
